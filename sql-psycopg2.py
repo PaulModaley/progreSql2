@@ -5,8 +5,10 @@ import psycopg2
 connection = psycopg2.connect(database="chinook")
 
 
-#build a curso object of the database
+#build a cursor object of the database
 cursor = connection.cursor()
+#Query 1 - select all records from the "Artist" table
+cursor.execute('SELECT * FROM "Artist"')
 
 #fetch the results (mutliple)
 results = cursor.fetchall()
